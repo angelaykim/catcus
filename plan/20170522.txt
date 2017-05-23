@@ -1,0 +1,51 @@
+
+Game Setup Class
+  Setup screen
+  choses new vs. old
+  type in old or new
+  store list of users and passwords 
+  (^check if they exist)
+  new - stores the info (make new user)
+  checks if the username already exists 
+  moves to game screen
+  initiates game that is chosen 
+  end game screen 
+  Takes score
+  computes user’s hs
+  updates hs
+  Updates overall 
+  Choose: new game; go back; quit
+
+
+User Class
+  name 
+  password
+  hs (for each game)
+  Times played
+  store scores
+
+Atari Class
+  levels 
+  Numbers of blocks
+  end game 
+  isDead
+  Lives
+  Display lives
+  implement game screen
+
+Blocks Class
+  number of hits 
+  colors
+  hasCat
+  score
+  Death
+  size
+
+Ball Class
+  color
+  speed (depends on number of blocks or level)
+  isDead
+
+Platform Class
+  movement 
+  length 
