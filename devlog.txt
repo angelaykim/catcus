@@ -34,7 +34,12 @@ LESSONS LEARNED
 ==============================================================
 
 
-yyyy-mm-dd
+2017-05-25
 --------------------------------------------------------------
+AK :: Finished GameScreen and Block
+      Began Platform
 
+PY :: Finished Player and Ball
+
+IT :: Working GameSetup
 ==============================================================
