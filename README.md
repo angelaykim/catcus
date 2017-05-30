@@ -10,15 +10,22 @@ CatGames
 
 ## Presentation to User
    Upon running CatGames, the user will first encounter a pop-up window asking for its username, which is followed by a game selection screen in which the user can choose one of the three games included in the CatGames series. After a specific game is chosen, the user enters the real game. 
+   
    In Catman, the user will see a maze with mice wandering around and cat food scattered at random corners. 
+   
    In Catari Breakout, the screen will display a mouse-controlled moving platform and blocks at the top of the screen. The blocks are in different colors and are randomly filled with cats that will fall down upon being hit. 
+   
    In Space Invader, the spaceship, which in this case is a cat, will be placed near the bottom of the screen and be free to move horizontally. The aliens are grouped on the top and will shift down as the game difficulty increases. 
+   
    After the user wins or loses, the user will see the final screen, on which the high score for each game is displayed and there will be buttons that allow the user to go back to the game selection screen and start a new game or to quit the entire game and exit according to the user's selecition. If the user quits the game, a good-bye screen will appear and the game will then end.   
 
 ## Functionality 
    First, the user will enter its username and choose a game to play. 
+   
    In Catman, the user gains points by eating cat food scattered in the maze and loses one life if it runs into a evil mouse. 
+   
    In Catari Breakout, the user has to bounce the ball back using the mouse-controlled platform. The user gains points when the ball successfully hits and eliminates a block and loses one life when the ball falls to the bottom edge of the screen. If the block hit contains a cat in it, the cat will fall down. 
+   
    In Space Invader, the spaceship (the cat) can shoot bullets (cat food) at the aliens. The user gains points when an alien is hit by cat food and eliminated and loses a life when the spaceship is hit by a bullets (fishbone) shot by the aliens. The spaceship can move horizontally via the control of the mouse. If the user loses all three lives in any of the three games, it will be transferred to the final screen and decides whether to restart a new game or to quit.  
    
 ## Launch Instruction
