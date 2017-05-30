@@ -3,6 +3,8 @@ class Ball {
   float xpos, ypos;
   float xspeed, yspeed;
   int xdirection, ydirection;
+
+  //constructor
   Ball() {
     rad = 2;
     xpos = 0;
@@ -12,6 +14,7 @@ class Ball {
     xdirection = 1;
     ydirection = 1;
   }
+  //overloaded
   Ball(int radius, float xposition, float yposition, float xvelocity, float yvelocity, int xdirect, int ydirect) {
     Ball magicBall = new Ball();
     rad = radius;

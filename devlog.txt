@@ -1,7 +1,6 @@
 ﻿catcus
-Angela Kim
-Iris Tao
-Pacy Yan
+Angela Kim, Iris Tao, Pacy Yan
+
 pd04
 ---------------------
 
