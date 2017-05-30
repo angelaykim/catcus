@@ -9,7 +9,7 @@ CatGames
    CatGames adds some wonderful catness to these classic games, making them more interesting and playable while keeping their beloved themes. 
 
 ## Presentation to User
-    Upon running CatGames, the user will first encounter a pop-up window asking for its username, which is followed by a game selection screen in which the user can choose one of the three games included in the CatGames series. After a specific game is chosen, the user enters the real game. 
+   Upon running CatGames, the user will first encounter a pop-up window asking for its username, which is followed by a game selection screen in which the user can choose one of the three games included in the CatGames series. After a specific game is chosen, the user enters the real game. 
    
    In Catman, the user will see a maze with mice wandering around and cat food scattered at random corners. 
    
