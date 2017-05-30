@@ -5,6 +5,7 @@ CatGames
 ## CatGames Description
 
    CatGames is consisted of three games that are related to cats -- Catman, Catari Breakout, and Space Invader. These games work as their old-fasion versions do, and yet give the players more freedom with game selection as CatGames allows them to choose their preferred game at the game setup. In addition, the implementation of cat elements adds a lot more fun to this collection of them. In Catman, the "Pacman" turns into a cat and the ghosts become mice. In Catari Breakout, the blocks have cats in them and the cats fall down when they are hit. In Space Invader, the spaceship is also a cat and the bullets are in the shape of cat food and fishbones. 
+   
    CatGames adds some wonderful catness to these classic games, making them more interesting and playable while keeping their beloved themes. 
 
 ## Presentation to User
