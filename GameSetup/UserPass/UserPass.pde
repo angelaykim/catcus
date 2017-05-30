@@ -52,17 +52,20 @@ void userPassScreen() {
   }
 }
 
-class Player{ 
-  //class of player that keeps all its variables throughout the game
-  int lives;
-  int hs;
+
+class Player{
   String name;
+  //String password;
+  int catariHS, spaceHS, catmanHS;
+  int lives;
   boolean dead;
   
   Player(){
-    lives = 3;
-    hs = 0;
-    dead = false;
-    name = "";
-}
-}
+   name = "cat";
+   //password = "kitty";
+   catariHS = 0;
+   spaceHS = 0;
+   catmanHS = 0;
+   lives = 3;
+   dead = false;
+  }
