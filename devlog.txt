@@ -1,7 +1,7 @@
-﻿catcus
+catcus
 Angela Kim, Iris Tao, Pacy Yan
-
-pd04
+APCS2 Period 4
+CatGames
 ---------------------
 
 
@@ -32,6 +32,37 @@ LESSONS LEARNED
     \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
 ==============================================================
 
+2017-05-18
+--------------------------------------------------------------
+Team :: Came up the the CatGames ideas
+        Created team name
+        Decided to include Pacman, Space Invader, and Atari Breakout as original game models
+        
+IT & AK :: Wrote team proposal in the google doc 
+           Shared with instructor 
+==============================================================
+
+2017-05-19
+--------------------------------------------------------------
+__ :: Registered team's repo
+
+__ :: Linked repo as a submodule of the class repo
+
+Team :: Discucussed in class and came up with the basic game structure
+==============================================================
+
+
+2017-05-24
+--------------------------------------------------------------
+AK :: Drew the UML diagrams for ___
+
+PY :: Drew the flowcharts for ___
+
+IT :: Drew the flowchart for the main game structure 
+
+__ :: Save proposal.pdf to the root of catcus repo
+==============================================================
+
 
 2017-05-25
 --------------------------------------------------------------
@@ -42,3 +73,17 @@ PY :: Finished Player and Ball
 
 IT :: Working GameSetup
 ==============================================================
+
+
+2017-05-30
+--------------------------------------------------------------
+AK :: __
+
+PY :: __
+
+IT :: Modified README.md
+      Finished the username window and game selection screen 
+==============================================================
+
+
+
