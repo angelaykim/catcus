@@ -1,6 +1,7 @@
 # Catcus
-Pacy Yan, Angela Kim, Iris Tao
-CatGames
+#### Pacy Yan, Angela Kim, Iris Tao
+
+#### CatGames
 
 ## CatGames Description
 
