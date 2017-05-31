@@ -1,1 +1,50 @@
-catcus
+catcus 
+Pacy Yan, Angela Kim, Iris Tao
+APCS2 Period 4
+CatGames
+
+Prioritization
+
+  1. Fully implement essential elements of each game, such as classes of Ship, Platform, Ball, Cat, etc. (divided individually)
+  2. Get each game to work by incorporating all its elements and connect its methods (team work)
+         1. Catari Breakout 
+         2. Space Invader
+         3. Catman
+         
+  3. Link the finished game setup screens to the individual games 
+  4. High scores analysis and display on the final screen 
+  5. Link the final screen to the game selection screen 
+  
+Core Functionality: 
+  
+    - Game setup 
+    - Functionality of each individual game
+    
+    Non-essential:
+    
+    - High scores analysis 
+    - Appearance of setup and final screen
+    
+Prerequisites:
+
+    - each game's hs calculation --> final hs display and analysis
+    - implementation of each class --> functionality of each game 
+    - funationality of each game --> linking setup, games, and final screen
+    
+Individual Tasks:
+
+    - development of differenct classes (vars, features, etc)
+    - appearance (after functionality is reached)
+   
+Team work
+    - Implementation of each game (writing methods, linking classes, making it run and work)
+    - overall structure of the entire game (connecting different parts: setup, game1, game2, game3, final screen, quitting)
+    
+Timeline
+    - [5/30 Tue] Finish game setup, work on catari's funtionality, continue developing and modifying indivial classes to accomdate updated game structure
+    - [5/31 Wed] Finish catari
+    - [6/01 Thur] Work on Space Invader
+    - [6/03 Sat] Finish Space Invader 
+    
+  
+    
