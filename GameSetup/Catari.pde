@@ -24,6 +24,21 @@ class Catari implements GameScreen{
     blocks = blockss;
     playingPlat = playingPlats;
   }//end overloaded constructor
+  
+  /* Draw Blocks on the Screen*/
+  void draw(){
+    for(int z = 0; z < blocks.length(); z ++){
+      for(int i = 0; i < 640; i += 5){
+        blocks[z].x = i;
+      }//goes through to find the x coordinate for the block
+      for(int f = 0; f < 360; f += 3){
+        blocks[z].y = f;
+      }//goes through to find the y coordinate for the blocks
+    }
+  }//end of draw
+  /* End of Blocks */
+  
+  
   boolean isDead(){
     if(playingBall.state == 1);
   }//end method isDead
@@ -31,11 +46,13 @@ class Catari implements GameScreen{
     if((lives > 0) && (numBalls == 0)){
       Ball newBall = new Ball(2, playingPlat.xpos, playingPlat.ypos, 3.5, 3.5, 1, 1, 0);
       lives -=1;
+      numBall = 1;
     }
   }//end resurrect method
   void hitBlock(){
     
-  }
+  }//end of method hitBlock
+  
   /* HITTING NORMAL BLOCKS */
   boolean ifHitNorm(){
     
@@ -65,7 +82,9 @@ class Catari implements GameScreen{
     createMore();
   }//end of method ifHitCreateMoreBlock
   void createMore(){
-    Ball extraBall = new Ball(playingBall.radius, playingPlat.xpos, playingPlat.ypos, playingBall.xspeed, playingBall.yspeed, playingBall.xdirection, playingBall.ydirection, 0);
+    Ball extraBall = new Ball(playingBall.radius, playingPlat.x, playingPlat.y, playingBall.xspeed, playingBall.yspeed, playingBall.xdirection, playingBall.ydirection, 0);
+    moreThanOne() = true;
+    numBall += 1;
   }//end of method createMore
   boolean moreThanOne(){
     return false;
