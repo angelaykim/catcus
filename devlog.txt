@@ -82,7 +82,10 @@ AK :: __
 PY :: __
 
 IT :: Modified README.md
-      Finished the username window and game selection screen 
+      Finished the username window and game selection screen (UserPass and But classes)
+      Modified flowcharts for main game structure and Space Invader
+      Wrote plan 20170530
+      
 ==============================================================
 
 
