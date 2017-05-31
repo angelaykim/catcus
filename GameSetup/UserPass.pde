@@ -23,15 +23,18 @@ void draw(){
   if (curScreen == 0){
     userPassScreen();
   }
-  else if (curScreen == 1){
-    gameSelectScreen();
+  else{
+    println("hei");
   }
 }
   
 void userPassScreen() {
-  String username = showInputDialog("Please enter your username:");
-  if (username == null)   exit();
   
+ 
+  String username = showInputDialog("Please enter your username:");
+ 
+  if (username == null)   exit();
+ 
   else if ("".equals(username))
     showMessageDialog(null, "Empty username Input, please enter again.", 
     "Alert", ERROR_MESSAGE);
@@ -49,26 +52,17 @@ void userPassScreen() {
   }
 }
 
-void gameSelectScreen(){
-     But but = new But();
-}
-  
-  
-
-class Player{
-  String name;
-  //String password;
-  int catariHS, spaceHS, catmanHS;
+class Player{ 
+  //class of player that keeps all its variables throughout the game
   int lives;
+  int hs;
+  String name;
   boolean dead;
   
   Player(){
-   name = "cat";
-   //password = "kitty";
-   catariHS = 0;
-   spaceHS = 0;
-   catmanHS = 0;
-   lives = 3;
-   dead = false;
-  }
+    lives = 3;
+    hs = 0;
+    dead = false;
+    name = "";
+}
 }
