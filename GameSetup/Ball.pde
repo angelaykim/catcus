@@ -35,4 +35,10 @@ class Ball {
       ydirection *= -1;
     }
   }
+  void shrink(){
+    
+  }//end shrink method
+  void bounceBack(){
+    
+  }//end bounceBack method
 }
