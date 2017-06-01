@@ -106,7 +106,7 @@ void update() {
     but1Over = false;
     but2Over = false;
   } else {
-    but2Over = but1Over = false;
+    but2Over = but1Over = but3Over = false;
   }
 }
 
