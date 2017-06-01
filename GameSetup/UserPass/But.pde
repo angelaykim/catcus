@@ -87,6 +87,24 @@ void drawBut() {
   stroke(255);
   rect(but3X, but3Y, butSize, butSize);
   
+  
+  textSize(20);
+  fill(255, 255, 255);
+  text("Catman", 145, height/2 - 3); 
+  
+    textSize(20);
+  fill(255, 255, 255);
+  text("Space", 145+175, height/2 - 12); 
+  
+      textSize(20);
+  fill(255, 255, 255);
+  text("Invader", 145+177, height/2 + 12); 
+  
+    textSize(20);
+  fill(255, 255, 255);
+  text("Catari", 145+175+175, height/2 - 3); 
+ 
+  
 }
 
     
