@@ -8,14 +8,19 @@
  
 import static javax.swing.JOptionPane.*;
  
-int curScreen = 0;
+int curScreen = 1;
 Player player;
+But but;
 
 final StringList usernames = new StringList( new String[] {"Eric", "Beth", "Katniss"});
 
 void setup(){
-  size(500,430);
+  background(255, 255, 255);
+  size(640,360);
   player = new Player();
+  but = new But();
+  
+  
 }
 
 void draw(){
@@ -46,11 +51,12 @@ void userPassScreen() {
     player.name = username;
     System.out.println(player.name);
     usernames.append(username);
+    curScreen = 1;
   }
 }
 
 void gameSelectScreen(){
-     But but = new But();
+     but.drawBut();
 }
   
   
