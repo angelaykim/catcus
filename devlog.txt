@@ -44,11 +44,11 @@ IT & AK :: Wrote team proposal in the google doc
 
 2017-05-19
 --------------------------------------------------------------
-__ :: Registered team's repo
+AK :: Registered team's repo
+      Linked repo as a submodule of the class repo
+__ ::
 
-__ :: Linked repo as a submodule of the class repo
-
-Team :: Discucussed in class and came up with the basic game structure
+Team :: Discussed in class and came up with the basic game structure
 ==============================================================
 
 
@@ -77,7 +77,7 @@ IT :: Working GameSetup
 
 2017-05-30
 --------------------------------------------------------------
-AK :: __
+AK :: Worked on Alien and Bullet classes
 
 PY :: __
 
@@ -86,6 +86,29 @@ IT :: Modified README.md
       Modified flowcharts for main game structure and Space Invader
       Wrote plan 20170530
       
+==============================================================
+
+
+
+2017-05-31
+--------------------------------------------------------------
+AK :: Worked on Alien class
+      -- Added new methods
+
+PY :: __
+
+IT :: __
+==============================================================
+
+
+
+2017-06-01
+--------------------------------------------------------------
+AK :: 
+
+PY :: 
+
+IT :: 
 ==============================================================
 
 
