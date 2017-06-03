@@ -1,0 +1,55 @@
+catcus 
+Pacy Yan, Angela Kim, Iris Tao
+APCS2 Period 4
+CatGames
+
+Prioritization
+
+  1. Fully implement essential elements of each game, such as classes of Ship, Platform, Ball, Cat, etc. (divided individually)
+  2. Get each game to work by incorporating all its elements and connect its methods (divided individually)
+         1. Catari Breakout (Pacy)
+         2. Space Invader (Angela)
+         3. Catman (Iris)
+         
+  3. Link the finished game setup screens to the individual games (team work)
+  4. High scores analysis and display on the final screen 
+  5. Link the final screen to the game selection screen 
+  
+Core Functionality: 
+  
+    - Game setup (username entry and game selection) (done)
+    - Functionality of each individual game
+    - linkage of individual games
+    
+    Non-essential:
+    
+    - High scores analysis 
+    - Appearance of final screen
+    
+Prerequisites:
+
+    - hs calculation rules --> final hs display and analysis
+    - implementation of specific classes --> functionality of games
+    - funationality of each game --> everything?
+    - screen switching functionality (accomplished) --> linkage of games 
+    
+Individual Tasks: 
+
+    - development of differenct classes (vars, features, etc)
+    - appearance (after functionality is reached)
+    - Pacy: Catari
+    - Angela: Space Invader
+    - Iris: Catman
+   
+Team work
+
+    - overall structure of the entire game (connecting different parts: setup, game1, game2, game3, final screen, quitting)
+    - debugging 
+    
+Timeline
+    - [6/3] work on individual game's functionality
+    - [6/4] finish all three games, linkages accomplished
+    - [6/5] debugging
+    
+  
+    
