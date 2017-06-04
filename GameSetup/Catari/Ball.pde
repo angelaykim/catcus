@@ -17,14 +17,14 @@ class Ball {
     state = 1;
   }
   //overloaded
-  Ball(int radius, float xposition, float yposition, float xvelocity, float yvelocity, int xdirect, int ydirect), int stat {
-    Ball magicBall = new Ball();
+  Ball(int radius, float xposition, float yposition, float xvelocity, float yvelocity, int xdirect, int ydirect, int stat){
     rad = radius;
     xpos = xposition;
     ypos = yposition;
     xspeed = xvelocity;
     yspeed = yvelocity;
     xdirection = xdirect;
+    ydirection = ydirect;
     state = stat;
   }
   void draw() {

@@ -15,7 +15,8 @@ class Block {
     score = point;
     wid = 5;
     height = 3;
-    state = random(2);
+    //state = random(2);
+    state = 1;
     x = xcor;
     y = ycor;
   }
@@ -33,7 +34,7 @@ class Block {
   //how to die
   void die() {
     wid = 0;
-    len = 0;
+    //len = 0;
   }
   
   /* Set Methods */
@@ -50,8 +51,8 @@ class Block {
   /* End of Set Methods */
   
   
-  void draw(){
-    background(0);
+  void display(){
+    fill(5);
     rect(x,y,wid,height);
   }//end draw
 }//end class
