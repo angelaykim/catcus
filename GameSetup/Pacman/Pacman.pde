@@ -2,7 +2,7 @@ PImage img;
 int faceDir = 1;
 int x = 320;
 int y = 180;
-float radius = 20;
+float radius = 40;
 ArrayList<Dots> dotList = new ArrayList();
 int dotNum = 50; //beginning num of dots
 
@@ -17,7 +17,7 @@ void setup(){
     //and limit it within the size of the world
     dotList.add(d); //add newly created dots
   }
-  img = loadImage("cat.jpg");
+  img = loadImage("cat.png");
 }
 
 void draw(){
@@ -33,15 +33,8 @@ void draw(){
   
   
 */
-  
-  
-  //translate(width/2, height/2);
-  //rotate(HALF_PI);
-  noStroke();
-  fill(26, 83, 255);
-  arc(x, y, radius, radius, QUARTER_PI, PI+PI-QUARTER_PI, PIE);
-  
-  image(img, x, y);
+
+  image(img, x, y, radius, radius);
   
 }
   
