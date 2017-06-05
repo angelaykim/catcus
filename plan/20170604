@@ -1,0 +1,23 @@
+Partial Plan for Catman: (Team plan stays unchanged)
+
+Changes to original plan:
+  - grid is gone 
+  - turned into a world of free dots and one/two ghosts randomly moving
+  - catman needs to eat all the dots to win
+  - dies if hit by a ghost 
+  
+
+----> ----> ----> -----> sequency
+   - size 
+   - dots setup 
+   - pacman setup (shape, moving, size, boundary reaction)
+   - confrontation! between pac and dot --> earning/losing pts
+   - [entire game functioning so far?]
+   
+   - ghost [appeaerance, moving constantly]
+   - ghost pac confrontation!
+   
+   - background, shape of everything 
+   - music?
+
+[20170604] finish this catman!
