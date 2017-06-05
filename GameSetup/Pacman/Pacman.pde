@@ -1,4 +1,4 @@
-PImage img;
+PImage img; //import image
 int faceDir = 1;
 int x = 320;
 int y = 180;
