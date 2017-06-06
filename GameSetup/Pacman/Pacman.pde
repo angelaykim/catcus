@@ -5,22 +5,22 @@ int y = 180; //original y position of cat
 ArrayList<Dots> dotList = new ArrayList();
 ArrayList<Dogs> dogList = new ArrayList();
 int dotNum = 20; //beginning num of dots
-int dogNum = 2;
-
-
-float dogX;              //declared variable for the circle that will move along x-axis
-float dogY;              //declared variable for the circle that will move along y-axis
+int dogNum = 1;
+int lives = 3;
+int level = 1;
+float dogX = random(imgSize, width-imgSize);              //declared variable for the circle that will move along x-axis
+float dogY = random(imgSize, height-imgSize);              //declared variable for the circle that will move along y-axis
 float dogVx = random (-10, 10); //sets the speed of the circle moving on the x-axis
 float dogVy = random (-10, 10); 
-
+boolean isDead = false;
 
 
 void setup(){
-  
+  background(0);
   size(640, 360);
   ellipseMode(RADIUS);
   for (int i = 0; i < dotNum; i ++){ //create dotNum number of dots
-    Dots d = new Dots((int)random(width), (int)random(height)); 
+    Dots d = new Dots((int)random(imgSize, width-imgSize), (int)random(imgSize+30, height-imgSize)); 
     //random() returns float --> needs to be converted to int
     //and limit it within the size of the world
     dotList.add(d); //add newly created dots
@@ -31,82 +31,145 @@ void setup(){
     dogList.add(dog);
   }
     
-  img = loadImage("cat.png");
+  img = loadImage("cat.gif");
   img2 = loadImage("moumou.png");
   img3 = loadImage("bub.png");
-  img4 = loadImage("doge.png");
-  
-  for (int i = 0; i < dotNum; i ++){
-    Dots dt = new Dots((int)random(width), (int)random(height)); 
-    //random --> scatter mice (dots) randomly
-    dotList.add(dt);
-    //generate dots --> store them in dot list
-  }
-  
-  dogX = 0;  //initial value for circle on x-axis
-  dogY = 0;  //initial value for circle on y-axis
-  dogX = 0;
-  dogY = 0;
-
+  img4 = loadImage("doge.gif");
 }
 
 void draw(){
-  background(255);
+  background(0);
+  
+  if (!isDead){
   textAlign(CENTER);
-  textSize(30); 
-  fill(255, 51, 51);
-  text("You Have Caught " + str(20 - dotNum) + " Mice!" , width/2, 30);
-  image(img, x, y, imgSize, imgSize); 
+  
+  //Import cat images
+  image(img, x, y, imgSize+5, imgSize+5); 
+  
+  //Display dotNum of mice
   for (int i = 0; i < dotNum; i ++){
     Dots ptr = dotList.get(i);
-    ptr.appear(); //display the dot
-    if (dist(ptr.x, ptr.y, x, y) < imgSize/2){
+    ptr.appear(); 
+    
+    //Mice eliminated if met by a cat
+    if (dist(ptr.x, ptr.y, x, y) < imgSize){
       dotList.remove(ptr);
       dotNum -= 1;
     }
   }
   
+  //Display doge
   for (int u = 0; u < dogNum; u ++){
     Dogs d = dogList.get(u);
-    //d.Wander();
+    d.Wander();
+    
+    if (dist(dogX, dogY, x, y) < imgSize){
+      lives --;
+      //immediately transport the cat to a safe location
+      //to avoid it being hit by doge a million times 
+      //(same spot --> keep overlapping --> deduct lives continuously)
+      x = width/2;
+      y = height/2;
+    }
+  }
+  if (lives <= 0){
+    isDead = true;
   }
   
-
   
+
+  //Display text according to number of mice caught
   if ( 20 - dotNum >= 3 && 20 - dotNum < 5){
     image(img3, x+20, y-70,imgSize+75, imgSize+40);
     textSize(10);
-    fill(255, 51, 51);
-    text("I am still hungary.", x+77, y-30);
+    fill(255);
+    text("I am so hungry.", x+77, y-30);
   }
   
   else if ( 20 - dotNum >= 6 && 20 - dotNum < 8){
     image(img3, x+20, y-70,imgSize+75, imgSize+40);
     textSize(10);
-    fill(255, 51, 51);
+    fill(255);
     text("Yum...Some more!", x+77, y-30);
   }
   
   else if ( 20 - dotNum >= 9 && 20 - dotNum < 11){
     image(img3, x+20, y-70,imgSize+75, imgSize+40);
     textSize(10);
-    fill(255, 51, 51);
+    fill(255);
     text("These mice are cute!", x+77, y-30);
   }
   
   else if ( 20 - dotNum >= 12 && 20 - dotNum < 14){
-    image(img3, x+20, y-70,imgSize+100, imgSize+40);
+    image(img3, x+20, y-70,imgSize+75, imgSize+40);
     textSize(10);
-    fill(255, 51, 51);
+    fill(255);
     text("Stupid dog...Haha!", x+77, y-30);
   }
   
   else if ( 20 - dotNum >= 18 && 20 - dotNum < 20){
     image(img3, x+20, y-70,imgSize+75, imgSize+40);
     textSize(10);
-    fill(255, 51, 51);
+    fill(255);
     text("I am so full!", x+77, y-30);
   }
+  
+  //Display white block on the top
+  fill(255);
+  rect(-1, -1, width+1, 30);
+  
+  //Display number of mice caught 
+  fill(0);
+  textSize(15);
+  textAlign(LEFT);
+  text("Number of Mice Caught: " + str(20 - dotNum), 10, 20);
+  
+
+  //Display number of mice caught as rectangular block
+  //frame block
+  fill(255);
+  rect(220, 10, 20 * 10, 10);
+  
+  int leng = 20 - dotNum;
+  
+  //color gradient: light --> deep
+  if (leng <= 5 && leng >= 0){
+    fill(255, 204, 204);
+  }
+  else if (leng > 5 && leng <= 10){
+    fill(255, 128, 128);
+  }
+  else if (leng > 10 && leng <= 15){
+    fill(255, 51, 51);
+  }
+  else if (leng > 15){
+    fill(230, 0, 0);
+  }
+  
+ //color block
+  rect(220, 10, leng * 10, 10);
+  
+  
+  //Display number of mice caught 
+  fill(0);
+  textSize(15);
+  textAlign(RIGHT);
+  text("Lives: ", width - 130, 20);
+  
+  //Display lives as rectangular block
+  //frame block
+  fill(255);
+  rect(width - 130, 10, lives * 40, 10);
+  //color block
+  fill(255, 20, 40);
+  rect(width - 130, 10, lives * 40, 10);
+  }
+  
+  else{
+    dieScreen();
+  }
+  
+}
   
   
   /*
@@ -114,62 +177,14 @@ void draw(){
   fill (random(25, 255), random (25, 255), random (25, 255), random (25, 255));} //code to fill in random color
   */
 
+void dieScreen(){
+  fill(250,128,114);
+  rect(-1, -1, width+1, height+1);
   
-  image(img4,dogX, dogY, imgSize, imgSize);
-  image(img4, dogX, dogY, imgSize, imgSize);
-  /*
-  dogX = dogX + dogVx;
-  dogY = dogY + dogVy;
-  
-  if (dogX > width){
-    dogVx = -5;
-  }
-  if (dogX < 0){
-    dogVx = 5;
-  }
-  if (dogY > height){
-    dogY = -5;
-  }
-  if (dogY < 0){
-    dogY = 5;
-  }
-  */
-  dogX = dogX + dogVx;    //code to change the speed of circle on x-axis
-  dogY = dogY + dogVy;    //code to change speed of circle on y-axis
-
-  if (dogX > width) {    //prevents the ball from moving offscreen on right of x-axis
-      dogVx = -5;        //if ball is greater than width, it'll bounce off end screen and move in opposite direction
-  }
-  if (dogX < 0){  //prevents ball from moving offscreen on left of axis
-      dogVx = 5;}    //if ball is less than 0, it'll bounce off end screen and move in opposite direction
-  if (dogY > height) { //prevents ball from moving offscreen at the top
-      dogVy = -5;}    //if ball is greater than height, it'll bounce off top of screen and move down
-  if (dogY < 0) {  //if ball is less than 0 in height, it'll bounce off bottom and move up
-      dogVy = 5;}    //prevents ball from disappearing at the bottom of the screen
 }
   
-   /*
-    
-    ellipse (dogX, dogY, 30, 30); 
-     dogX += dogVx; //keep moving in Vx direction by increasing its x axis position
-    dogX += dogVy; //keep moving in Vy direction by increasing its y axis postion
-    
-    //reverse direction if it touches the boundary
-    if (dogX > width){
-      dogVx = -10; 
-    }
-    if (dogX < 0){
-      dogVx = 10; 
-    }
-    if (dogY < 0){
-      dogVy = 10; 
-    }
-     if (dogY > height){
-      dogVy = -10; 
-    }
-    */
-    
-
+ 
+  
   
   
 
@@ -179,7 +194,7 @@ void draw(){
  void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {     
-      if (y < 0){
+      if (y < 30){
         y = height;
       }  
       y -= 10;
@@ -205,6 +220,8 @@ void draw(){
   }
  }
 
+ 
+
   
 
 class Dots{
@@ -223,10 +240,27 @@ class Dots{
 class Dogs{
   
   void Wander(){
-    fill (random(25, 255), random (25, 255), random (25, 255), random (25, 255)); //code to fill in random color
-    ellipse (dogX, dogY, 30, 30); 
-    image(img2, dogX, dogY, imgSize, imgSize);
+ image(img4,dogX, dogY, imgSize, imgSize);
+
+
+ 
+  dogX += dogVx; //keep moving in Vx direction by increasing its x axis position
+  dogY += dogVy; //keep moving in Vy direction by increasing its y axis postion
+
+  if (dogX + imgSize > width) {    
+      dogVx = -1;     
   }
-}
-    
+  if (dogX < 0){  
+      dogVx = 1;
+  }
+      
+  if (dogY + imgSize > height) { 
+      dogVy = -1;
+  }
+  
+  if (dogY < 30) {  
+      dogVy = 1;
+  }
+  }
+}  
   
