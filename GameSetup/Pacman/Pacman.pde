@@ -1,37 +1,57 @@
-PImage img, img2, img3, img4; //import images
-float imgSize = 40; //constant img size
-int x = 320; //original x position of cat
-int y = 180; //original y position of cat
-ArrayList<Dots> dotList = new ArrayList();
-ArrayList<Dogs> dogList = new ArrayList();
-int dotNum = 20; //beginning num of dots
+//import images
+PImage img, img2, img3, img4; 
+
+int dotNum = 20; 
 int dogNum = 1;
 int lives = 3;
-int level = 1;
-float dogX = random(imgSize, width-imgSize);              //declared variable for the circle that will move along x-axis
-float dogY = random(imgSize, height-imgSize);              //declared variable for the circle that will move along y-axis
-float dogVx = random (-10, 10); //sets the speed of the circle moving on the x-axis
-float dogVy = random (-10, 10); 
-boolean isDead = false;
+int screen = 0; 
 
+float imgSize = 40; 
+float x = 320; 
+float y = 180;            
+float dogVx = random(-10, 10);
+float dogVy = random(-10, 10); 
+float dogX = random(imgSize, width-imgSize);              
+float dogY = random(imgSize, height-imgSize);
+
+ArrayList<Dots> dotList = new ArrayList();
+ArrayList<Dogs> dogList = new ArrayList();
+  
+//continue to display cat and everything?
+boolean contDis = true; 
 
 void setup(){
+  
+  //used for restart
+  dotNum = 20;
+  lives = 3;
+  dogX = random(imgSize, width-imgSize); 
+  dogY = random(imgSize, height-imgSize);   
+  dogVx = random (-10, 10);
+  dogVy = random (-10, 10); 
+  contDis = true; 
+  
   background(0);
   size(640, 360);
   ellipseMode(RADIUS);
-  for (int i = 0; i < dotNum; i ++){ //create dotNum number of dots
+  
+  //Create dots (mice)
+  for (int i = 0; i < dotNum; i ++){ 
     Dots d = new Dots((int)random(imgSize, width-imgSize), (int)random(imgSize+30, height-imgSize)); 
+    
     //random() returns float --> needs to be converted to int
     //and limit it within the size of the world
+    
     dotList.add(d); //add newly created dots
   }
   
+  //Create dogs 
   for (int u = 0; u < dogNum; u ++){
     Dogs dog = new Dogs();
     dogList.add(dog);
   }
     
-  img = loadImage("cat.gif");
+  img = loadImage("cat.png");
   img2 = loadImage("moumou.png");
   img3 = loadImage("bub.png");
   img4 = loadImage("doge.gif");
@@ -39,46 +59,168 @@ void setup(){
 
 void draw(){
   background(0);
-  
-  if (!isDead){
   textAlign(CENTER);
+
+      //End this screen and switch to disScreen if cat is dead or cat wins
+  if (lives <= 0 || (20-dotNum >= 20)){
+    contDis = false;
+  }
   
+  if (contDis){
+    
+
+    
   //Import cat images
   image(img, x, y, imgSize+5, imgSize+5); 
   
-  //Display dotNum of mice
-  for (int i = 0; i < dotNum; i ++){
-    Dots ptr = dotList.get(i);
-    ptr.appear(); 
-    
-    //Mice eliminated if met by a cat
-    if (dist(ptr.x, ptr.y, x, y) < imgSize){
-      dotList.remove(ptr);
-      dotNum -= 1;
-    }
-  }
+  //Display randomly scatterd mice
+  disMice();
   
-  //Display doge
-  for (int u = 0; u < dogNum; u ++){
-    Dogs d = dogList.get(u);
-    d.Wander();
-    
-    if (dist(dogX, dogY, x, y) < imgSize){
-      lives --;
-      //immediately transport the cat to a safe location
-      //to avoid it being hit by doge a million times 
-      //(same spot --> keep overlapping --> deduct lives continuously)
-      x = width/2;
-      y = height/2;
-    }
-  }
-  if (lives <= 0){
-    isDead = true;
-  }
-  
-  
+  //Display bouncing-around doge 
+  disDog();
 
-  //Display text according to number of mice caught
+  //Display text bubbles according to number of mice caught
+  textBub(); 
+
+  //Display status bar on the top
+  bar();
+ 
+  
+  }
+  
+  //Cat-Mice Display ended --> Switch screens
+  else{ 
+    if (lives <= 0){
+      image(img4, 200, 50, imgSize * 7, imgSize * 7);
+      dieScreen(); 
+    }
+    else{
+      winScreen();
+    }
+  }
+}
+
+  
+ 
+void mousePressed() {
+  if (screen == 1 && dogeOver()) {
+    //restart the game (reset vars, including contDis)
+    setup(); 
+  }
+  
+  //Since buttons on screen 1 and 2 are at the same location
+  //They can be put into the same if statment
+  
+  else if ((screen == 1 || screen == 2)&& but1Over()){
+    //gsScreen();
+  }
+  else if ((screen == 1 || screen == 2) && but2Over()){ 
+    exit();
+  }
+}
+
+  
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == UP) {     
+      if (y < 30){
+        y = height;
+      }  
+      y -= 10;
+    } else if (keyCode == DOWN) {
+    
+      if (y > height){
+        y = 0;
+      }
+      y += 10;
+    
+    } else if (keyCode == LEFT) {
+      if (x < 0){
+        x = width;
+      }
+      x -= 10;
+     
+    } else if (keyCode == RIGHT) {
+      if (x > width){
+        x = 10;
+      }
+      x += 10;
+    }  
+  }
+ 
+  }
+  
+ 
+
+//================================ Other methods
+
+//================= dieScreen() Display die screen (cat loses)
+void dieScreen(){
+  screen = 1;
+  background(250,128,114);
+  image(img4, 160, 50, imgSize * 7, imgSize * 7);
+  
+  fill(255);
+  textAlign(CENTER);
+  textSize(20);
+  text("Losing to a Doge So Cute is Your Honor.", width/2, 30);
+  
+  textSize(10);
+  text("Click My Face to Restart.", width/2 - 15, height - 15);
+  
+  fill(255);
+  rect(10, 100, 180, 30);
+  
+  fill(0);
+  textAlign(LEFT);
+  textSize(15);
+  text("Game Selection Screen", 20, 120);
+  
+  fill(255);
+  rect(455, 100, 175, 30);
+  
+  fill(0);
+  textAlign(LEFT);
+  textSize(15);
+  text("Say Goodbye to Doge", 465, 120);
+  
+}
+  
+//================= winScreen() Display win screen (cat wins) 
+void winScreen(){
+  screen = 2;
+  background(250,128,114);
+  image(img, 160, 50, imgSize * 7, imgSize * 7);
+  
+  fill(255);
+  textAlign(CENTER);
+  textSize(20);
+  text("You Have Caught All 20 Mice! Congrats!", width/2, 30);
+  
+  textSize(10);
+  text("Click My Face to Restart.", width/2 - 15, height - 15);
+  
+  fill(255);
+  rect(10, 100, 180, 30);
+  
+  fill(0);
+  textAlign(LEFT);
+  textSize(15);
+  text("Game Selection Screen", 20, 120);
+  
+  fill(255);
+  rect(455, 100, 175, 30);
+  
+  fill(0);
+  textAlign(LEFT);
+  textSize(15);
+  text("Say Goodbye to Cat", 465, 120);
+}
+
+//================= textBub() Display text bubbles
+void textBub(){
+  if (lives > 0){
+   //Display text according to number of mice caught
   if ( 20 - dotNum >= 3 && 20 - dotNum < 5){
     image(img3, x+20, y-70,imgSize+75, imgSize+40);
     textSize(10);
@@ -113,10 +255,15 @@ void draw(){
     fill(255);
     text("I am so full!", x+77, y-30);
   }
-  
+  }
+}
+
+//================= bar() Display status bar 
+void bar(){
   //Display white block on the top
   fill(255);
   rect(-1, -1, width+1, 30);
+  
   
   //Display number of mice caught 
   fill(0);
@@ -146,7 +293,7 @@ void draw(){
     fill(230, 0, 0);
   }
   
- //color block
+  //color block
   rect(220, 10, leng * 10, 10);
   
   
@@ -159,108 +306,89 @@ void draw(){
   //Display lives as rectangular block
   //frame block
   fill(255);
-  rect(width - 130, 10, lives * 40, 10);
+  rect(width - 130, 10, 3 * 40, 10);
+  
   //color block
   fill(255, 20, 40);
   rect(width - 130, 10, lives * 40, 10);
-  }
-  
-  else{
-    dieScreen();
-  }
-  
 }
-  
-  
-  /*
-  if (mousePressed) {  //if mouse is pressed, the ball will change to a random color, hold down for constant change
-  fill (random(25, 255), random (25, 255), random (25, 255), random (25, 255));} //code to fill in random color
-  */
 
-void dieScreen(){
-  fill(250,128,114);
-  rect(-1, -1, width+1, height+1);
-  
-}
-  
- 
-  
-  
-  
-
-
-
-  
- void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == UP) {     
-      if (y < 30){
-        y = height;
-      }  
-      y -= 10;
-    } else if (keyCode == DOWN) {
+//================= disDog() Display dog
+void disDog(){
+  //Display doge
+  for (int u = 0; u < dogNum; u ++){
+    Dogs d = dogList.get(u);
+    d.Wander();
     
-      if (y > height){
-        y = 0;
-      }
-      y += 10;
+    //If cat collides with dog 
+    //--> lives decreases by 1
+    //--> cat teleported to the center to avoid dog
     
-    } else if (keyCode == LEFT) {
-      if (x < 0){
-        x = width;
-      }
-      x -= 10;
-     
-    } else if (keyCode == RIGHT) {
-      if (x > width){
-        x = 10;
-      }
-      x += 10;
-    }  
+    if (dist(dogX, dogY, x, y) < imgSize){
+      lives --;
+      image(img3, x+20, y-70,imgSize+75, imgSize+40);
+      textSize(10);
+      fill(255);
+      text("OUCH!", x+77, y-30);
+      x = dogX - 100;
+      y = dogY - 100;
+      delay(500);  
+    }
+    
   }
- }
+}
 
- 
-
-  
-
-class Dots{
-  int x, y; //every dot has its own xy coordinates
-  
-  Dots(int a, int b){//overloaded constructor --> used in setup to generate dots
-    x = a;
-    y = b;
-  }  
-  void appear(){  
-  image(img2, x, y, imgSize, imgSize);    
+//================= disMice() Display mice
+void disMice(){
+  //Display dotNum of mice
+  for (int i = 0; i < dotNum; i ++){
+    Dots ptr = dotList.get(i);
+    ptr.appear(); 
+    
+    //Mice eliminated if met by a cat
+    if (dist(ptr.x, ptr.y, x, y) < imgSize){
+      dotList.remove(ptr);
+      dotNum -= 1;
+    }
   }
 }
 
 
-class Dogs{
-  
-  void Wander(){
- image(img4,dogX, dogY, imgSize, imgSize);
+
+//================= Check if mouse is over doge / cat's face 
+
+//(Since doge and cat are at the same location on screen 1 and 2, 
+// the same dogeOver() method can be used for both cat and doge)
+
+boolean dogeOver(){
+  if (mouseX >= 200 && mouseX <= 200 + imgSize * 7 && 
+      mouseY >= 50 && mouseY <= 50 + imgSize * 7) { 
+      return true;
+  } else {
+    return false;
+  }
+}
+
+//================= Check if the mouse is over the "Game Selection Screen" button
+boolean but1Over(){
+  if (mouseX >= 10 && mouseX <= 190 && 
+      mouseY >= 100 && mouseY <= 130) { 
+      return true;
+  } else {
+    return false;
+  }
+}
+
+//================= Check if the mouse is over the "Say Goodbye" button
+boolean but2Over(){
+  if (mouseX >= 455 && mouseX <= 630 && 
+      mouseY >= 100 && mouseY <= 130) { 
+      return true;
+  } else {
+    return false;
+  }
+}
+
 
 
  
-  dogX += dogVx; //keep moving in Vx direction by increasing its x axis position
-  dogY += dogVy; //keep moving in Vy direction by increasing its y axis postion
-
-  if (dogX + imgSize > width) {    
-      dogVx = -1;     
-  }
-  if (dogX < 0){  
-      dogVx = 1;
-  }
-      
-  if (dogY + imgSize > height) { 
-      dogVy = -1;
-  }
-  
-  if (dogY < 30) {  
-      dogVy = 1;
-  }
-  }
-}  
-  

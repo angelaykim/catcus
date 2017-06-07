@@ -106,7 +106,14 @@ PY :: Worked on Catari and implementation of all the different classes
 IT :: __
 ==============================================================
 
+2017-06-05
+--------------------------------------------------------------
+AK :: Worked on SpaceInvaders
 
+PY :: 
+
+IT :: 
+==============================================================
 
 2017-06-04
 --------------------------------------------------------------
@@ -130,7 +137,7 @@ IT ::
 
 2017-06-06
 --------------------------------------------------------------
-AK :: 
+AK :: Worked on SpaceInvaders, Alien, Bullet
 
 PY :: Tweaked errors inside of Catari class, it now generally works with the block error still happening. 
 
