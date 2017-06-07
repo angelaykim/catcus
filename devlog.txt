@@ -14,9 +14,20 @@ Obstacles overcome for Catari
 3) Making sure the ball hit the platform - this was resolved by writing a corner method that checked if the ball hit the corner of the platform and would make it bounce off 
 4) There were too many things inside Catari and there was no remakability or restart ability - this was resolved by making a GameSetup class that would make a new game each time and rebuild the level
 5) The ball would not bounce off of the blocks and this was resolved by [STILL WORKING ON THIS]
+
+Obstacles overcome for Space Invaders
+1) Like Catari: figuring out how processing works, like setup() and draw() -- the reference on the processing website and classmates were 100/10 helpful.
+2) Getting the user to shoot.
+2a) Following that up, getting the user to shoot and actually kill the aliens.
+3) Getting the aliens to shoot (the timing between each shot).
+4) Setting the aliens up to move in a way that would make it possible to see each individual alien.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNRESOLVED ISSUES
-
+1) In Space Invaders, sometimes dead aliens shoot bullets, too. (Don't really know how to completely kill off aliens and user alike.)
+2) Rather than the first alien being hit by the bullet dying, any random alien that's hit by the bullet seems to die.
+3) The colors of the aliens are off in some rows by one.
+4) No cat related name for Space Invaders. :(
+5) Couldn't mimic exact movement of the aliens of the original game.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COOL STUFF LEARNED
 1) Learning about processing has just been super fun 
@@ -27,6 +38,7 @@ MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 LESSONS LEARNED 
 1) Should plan out more carefully in the flowchart what ought to be done and how things holistically should work 
+2) Should plan out more carefully and manage time better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ______   ______   __   __   __       ______   _______     
@@ -138,6 +150,8 @@ IT ::
 2017-06-06
 --------------------------------------------------------------
 AK :: Worked on SpaceInvaders, Alien, Bullet
+      --Mostly functional
+        --Few errors with color and shooting
 
 PY :: Tweaked errors inside of Catari class, it now generally works with the block error still happening. 
 
