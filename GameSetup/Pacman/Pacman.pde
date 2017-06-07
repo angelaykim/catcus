@@ -15,6 +15,7 @@ float dogVy = random (-10, 10);
 boolean isDead = false;
 
 
+
 void setup(){
   background(0);
   size(640, 360);
@@ -58,6 +59,7 @@ void draw(){
     }
   }
   
+  
   //Display doge
   for (int u = 0; u < dogNum; u ++){
     Dogs d = dogList.get(u);
@@ -65,17 +67,13 @@ void draw(){
     
     if (dist(dogX, dogY, x, y) < imgSize){
       lives --;
-      //immediately transport the cat to a safe location
-      //to avoid it being hit by doge a million times 
-      //(same spot --> keep overlapping --> deduct lives continuously)
       x = width/2;
       y = height/2;
+      delay(1000);  
     }
+    
   }
-  if (lives <= 0){
-    isDead = true;
-  }
-  
+
   
 
   //Display text according to number of mice caught
@@ -169,6 +167,7 @@ void draw(){
     dieScreen();
   }
   
+  
 }
   
   
@@ -178,12 +177,18 @@ void draw(){
   */
 
 void dieScreen(){
+
+      
+
+
+  delay(4000);
   fill(250,128,114);
   rect(-1, -1, width+1, height+1);
   
 }
   
- 
+
+  
   
   
   
@@ -218,6 +223,11 @@ void dieScreen(){
       x += 10;
     }  
   }
+    if (lives <= 0){
+    image(img4, 200, 50, imgSize * 7, imgSize * 7);
+    isDead = true;
+  }
+  
  }
 
  
