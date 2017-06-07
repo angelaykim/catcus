@@ -8,19 +8,25 @@ CatGames
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
-
+Obstacles overcome for Catari
+1) Understanding Processing syntax - this just required research in general and learning how things like setup and draw worked as well as the different methods that could be used to draw ellipses or rectangles 
+2) Understanding how to show objects of different classes - this was resolved by writing a display method for each class within the main Catari class
+3) Making sure the ball hit the platform - this was resolved by writing a corner method that checked if the ball hit the corner of the platform and would make it bounce off 
+4) There were too many things inside Catari and there was no remakability or restart ability - this was resolved by making a GameSetup class that would make a new game each time and rebuild the level
+5) The ball would not bounce off of the blocks and this was resolved by [STILL WORKING ON THIS]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNRESOLVED ISSUES
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COOL STUFF LEARNED
-
+1) Learning about processing has just been super fun 
+2) There are many built in processing methods that could be developed better
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MID-DEVELOPMENT DESIGN CHANGES
-
+1) In Catari, we took away some of the special things we wanted to do
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 LESSONS LEARNED 
-
+1) Should plan out more carefully in the flowchart what ought to be done and how things holistically should work 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ______   ______   __   __   __       ______   _______     
@@ -79,7 +85,7 @@ IT :: Working GameSetup
 --------------------------------------------------------------
 AK :: Worked on Alien and Bullet classes
 
-PY :: __
+PY :: Worked on Catari and writing methods within the individual Platform, Block, Ball classes
 
 IT :: Modified README.md
       Finished the username window and game selection screen (UserPass and But classes)
@@ -95,7 +101,7 @@ IT :: Modified README.md
 AK :: Worked on Alien class
       -- Added new methods
 
-PY :: __
+PY :: Worked on Catari and implementation of all the different classes
 
 IT :: __
 ==============================================================
@@ -119,11 +125,21 @@ IT :: Updated plan 20170604.txt
       Worked on Catman
 ==============================================================
 
+
+2017-05-04
+--------------------------------------------------------------
+AK :: 
+
+PY :: Achieved general implementation with Catari class - several errors are occurring. Wrote a GameSetup class.
+
+IT :: 
+==============================================================
+
 2017-06-06
 --------------------------------------------------------------
 AK :: Worked on SpaceInvaders, Alien, Bullet
 
-PY :: 
+PY :: Tweaked errors inside of Catari class, it now generally works with the block error still happening. 
 
 IT :: Worked on Catman, added Dots and Dogs classes.
 ==============================================================
