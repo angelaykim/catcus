@@ -2,7 +2,6 @@ int curScreen = 0;
 But but;
 Catman cat;
 SpaceInvaders space;
-Catari cata;
 
 //final StringList usernames = new StringList( new String[] {"Eric", "Beth", "Katniss"});
 
@@ -13,7 +12,7 @@ void setup(){
   but = new But();
   cat = new Catman();
   space = new SpaceInvaders();
-  cata = new Catari();
+  
   
 }
 
@@ -27,10 +26,6 @@ void draw(){
   }
   else if (curScreen == 4){
     spaceScreen();
-  }
-  
-  else if (curScreen == 5){
-    catariScreen();
   }
 }
  
@@ -99,12 +94,6 @@ void draw(){
     space = new SpaceInvaders();
     curScreen = 4;
   }
-  
-  else if (curScreen == 0 && but.but3Over){
-    cata = new Catari();
-    curScreen = 5;
-  }
-  
   else if ((curScreen == 2 || curScreen == 3) && cat.dogeOver()){
     cat = new Catman(); //reset
   }
@@ -131,9 +120,5 @@ void catManScreen(){
   
 void spaceScreen(){
   space.drawSpace();
-}
-
-void catariScreen(){
-  cata.drawCat();
 }
  
