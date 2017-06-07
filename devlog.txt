@@ -121,7 +121,7 @@ IT :: Updated plan 20170604.txt
 
 2017-06-06
 --------------------------------------------------------------
-AK :: 
+AK :: Worked on SpaceInvaders, Alien, Bullet
 
 PY :: 
 
