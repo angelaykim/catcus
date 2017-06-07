@@ -51,9 +51,6 @@ void drawBut() {
   fill(255, 255, 255);
   text("Please choose a game to start playing!", 320, 65);
   
-    textSize(15);
-  fill(255, 255, 255);
-  text("Catari: Releasing 2018, Stay Tuned!", 320, 340);
   
 
   textSize(32);
