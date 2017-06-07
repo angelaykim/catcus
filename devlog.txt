@@ -8,25 +8,60 @@ CatGames
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
+
 Obstacles overcome for Catari
 1) Understanding Processing syntax - this just required research in general and learning how things like setup and draw worked as well as the different methods that could be used to draw ellipses or rectangles 
 2) Understanding how to show objects of different classes - this was resolved by writing a display method for each class within the main Catari class
 3) Making sure the ball hit the platform - this was resolved by writing a corner method that checked if the ball hit the corner of the platform and would make it bounce off 
 4) There were too many things inside Catari and there was no remakability or restart ability - this was resolved by making a GameSetup class that would make a new game each time and rebuild the level
 5) The ball would not bounce off of the blocks and this was resolved by [STILL WORKING ON THIS]
+
+Obstacles overcome for Space Invaders
+1) Like Catari: figuring out how processing works, like setup() and draw() -- the reference on the processing website and classmates were 100/10 helpful.
+2) Getting the user to shoot.
+2a) Following that up, getting the user to shoot and actually kill the aliens.
+3) Getting the aliens to shoot (the timing between each shot).
+4) Setting the aliens up to move in a way that would make it possible to see each individual alien.
+
+Obstacles overcome for Catman
+1) Linking the Catman game to the original Game Selection Screen (solved via using screen switching)
+2) Making all objects properly react to the boundary (the cat moves on to the other end of the screen, the doge bounces back)
+3) Getting the status bar on the top of the screen to display the current scores
+4) Teleporting the cat and making it lose life when it is hit by a doge.
+
+Obstacles overcome for GameSetup
+1) Creating buttons and place them at the proper location
+2) Adjusting highlighting and background colors according to mouse position
+3) Link the buttons to the games and keep methods like mousePressed() and keyPressed() in place
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 UNRESOLVED ISSUES
+1) In Space Invaders, sometimes dead aliens shoot bullets, too. (Don't really know how to completely kill off aliens and user alike.)
+2) Rather than the first alien being hit by the bullet dying, any random alien that's hit by the bullet seems to die.
+3) The colors of the aliens are off in some rows by one.
+4) No cat related name for Space Invaders. :(
+5) Couldn't mimic exact movement of the aliens of the original game.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 COOL STUFF LEARNED
 1) Learning about processing has just been super fun 
 2) There are many built in processing methods that could be developed better
+3) Screen switching is cool!!! It helped us link the various screens together (Game Selection, Catman, dieScreen, winScreen) and it keeps the entire game collection in place.
+4) Importing (doge) images is fun :)
+5) Delay() to make the doge image appear longer 
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MID-DEVELOPMENT DESIGN CHANGES
 1) In Catari, we took away some of the special things we wanted to do
+2) In Catman, we took away the maze and instead added a bouncing doge that flies around to attack the cat. We also added mice that the cat can eat to earn points. We ended up not doing the maze because drawing the maze itself and making the objects move according to it was a lot of work, and we thought that letting them just move more freely in the entire world gives the user more freedom and the bouncing doge looks cute :)
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 LESSONS LEARNED 
 1) Should plan out more carefully in the flowchart what ought to be done and how things holistically should work 
+2) Should plan out more carefully and manage time better
+3) Reusing code saves you some time. (We used the code in the But(ton) class for the dieScreen and winScreen, and also the code for status bars could be used on both the Number of Mice Left and the Lives ones)
+4) It is easier to organize all the code under one file. (Write all the different classes under one file first to make it easier to constantly check and modify them, once the entire thing works, divide them up and sort them into different tabs)
+5) Constanly update your plan and flowchart. (Your head is much clearer when you are just planning out stuff instead of coding nonstoppingly. Avoid changing the direction too much in coding but rather set a clear plan beforehand and just follow it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ______   ______   __   __   __       ______   _______     
@@ -52,7 +87,6 @@ IT & AK :: Wrote team proposal in the google doc
 --------------------------------------------------------------
 AK :: Registered team's repo
       Linked repo as a submodule of the class repo
-__ ::
 
 Team :: Discussed in class and came up with the basic game structure
 ==============================================================
@@ -60,13 +94,11 @@ Team :: Discussed in class and came up with the basic game structure
 
 2017-05-24
 --------------------------------------------------------------
-AK :: Drew the UML diagrams for ___
+AK :: Drew the UML diagrams. 
 
-PY :: Drew the flowcharts for ___
+PY :: Drew flowcharts for Catman and Atari Breakout
 
-IT :: Drew the flowchart for the main game structure 
-
-__ :: Save proposal.pdf to the root of catcus repo
+IT :: Drew flowcharts for the main game structure and Space Invaders
 ==============================================================
 
 
@@ -74,10 +106,10 @@ __ :: Save proposal.pdf to the root of catcus repo
 --------------------------------------------------------------
 AK :: Finished GameScreen and Block
       Began Platform
-
+      
 PY :: Finished Player and Ball
 
-IT :: Working GameSetup
+IT :: Working on GameSetup
 ==============================================================
 
 
@@ -88,10 +120,9 @@ AK :: Worked on Alien and Bullet classes
 PY :: Worked on Catari and writing methods within the individual Platform, Block, Ball classes
 
 IT :: Modified README.md
-      Finished the username window and game selection screen (UserPass and But classes)
+      Finished the username window and Game Selection screen (UserPass and But classes)
       Modified flowcharts for main game structure and Space Invader
       Wrote plan 20170530
-      
 ==============================================================
 
 
@@ -99,47 +130,38 @@ IT :: Modified README.md
 2017-05-31
 --------------------------------------------------------------
 AK :: Worked on Alien class
-      -- Added new methods
+      Added new methods
 
 PY :: Worked on Catari and implementation of all the different classes
-
-IT :: __
 ==============================================================
 
 2017-06-05
 --------------------------------------------------------------
 AK :: Worked on SpaceInvaders
 
-PY :: 
+PY :: Worked on Catari
 
-IT :: 
+IT :: Worked on Catman
 ==============================================================
 
 2017-06-04
 --------------------------------------------------------------
-AK :: 
-
-PY :: 
+PY :: Achieved general implementation with Catari class
+      several errors are occurring. Wrote a GameSetup class.
 
 IT :: Updated plan 20170604.txt
       Worked on Catman
 ==============================================================
 
 
-2017-05-04
---------------------------------------------------------------
-AK :: 
-
-PY :: Achieved general implementation with Catari class - several errors are occurring. Wrote a GameSetup class.
-
-IT :: 
-==============================================================
-
 2017-06-06
 --------------------------------------------------------------
 AK :: Worked on SpaceInvaders, Alien, Bullet
+      Mostly functional
+      Few errors with color and shooting
 
 PY :: Tweaked errors inside of Catari class, it now generally works with the block error still happening. 
 
-IT :: Worked on Catman, added Dots and Dogs classes.
+IT :: Finished all features in Catman. (status bar, dog-cat confrontation, dieScreen, winScreen)
+      Linked Catman and Game Selection Screen.
 ==============================================================

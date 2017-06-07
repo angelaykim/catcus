@@ -12,7 +12,7 @@
 ## Presentation to User
    Upon running CatGames, the user will first encounter a pop-up window asking for its username, which is followed by a game selection screen in which the user can choose one of the three games included in the CatGames series. After a specific game is chosen, the user enters the real game. 
    
-   In Catman, the user will see a maze with mice wandering around and cat food scattered at random corners. 
+   In Catman, the user will see a world with randomly scattered mice, a bouncing around dog, and a very cute cat that is controlled by the user's keyboard movements. There will also be a bar on the top of the screen displaying number of mice caught and number of lives left for each round. If the cat dies or wins, the user will be transferred to the disScreen or the winScreen correspondingly, which will then provide the user with the options to quit, restart, or to go back to the Game Selection Screen.
    
    In Catari Breakout, the screen will display a mouse-controlled moving platform and blocks at the top of the screen. The blocks are in different colors and are randomly filled with cats that will fall down upon being hit. 
    
@@ -23,7 +23,7 @@
 ## Functionality 
    First, the user will enter its username and choose a game to play. 
    
-   In Catman, the user gains points by eating cat food scattered in the maze and loses one life if it runs into a evil mouse. 
+   In Catman, the user gains points by eating mice scattered in the world and loses one life if it runs into a doge. 
    
    In Catari Breakout, the user has to bounce the ball back using the mouse-controlled platform. The user gains points when the ball successfully hits and eliminates a block and loses one life when the ball falls to the bottom edge of the screen. If the block hit contains a cat in it, the cat will fall down. 
    

@@ -107,6 +107,8 @@ void drawBut() {
   
 }
 
+
+
     
 
 
@@ -128,24 +130,17 @@ void update() {
   }
 }
 
-/*
-void mousePressed() {
-  if (but2Over) {
-    currentColor = but2Color;
-  }
-  if (but1Over) {
-    currentColor = but1Color;
-  }
-}
-*/
+
 
 
 boolean overBut1(int x, int y, int width, int height)  {
   if (mouseX >= x && mouseX <= x+width && 
       mouseY >= y && mouseY <= y+height) {
-          currentColor = but2Color;
+          currentColor = but2Color; 
+      
       return true;
-  } else {
+  } 
+  else {
     return false;
   }
 }
