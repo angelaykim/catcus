@@ -53,7 +53,7 @@ COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MID-DEVELOPMENT DESIGN CHANGES
 1) In Catari, we took away some of the special things we wanted to do
-2) In Catman, we took away the maze and instead added a bouncing doge that flies around to attack the cat. We also added mice that the cat can eat to earn points. 
+2) In Catman, we took away the maze and instead added a bouncing doge that flies around to attack the cat. We also added mice that the cat can eat to earn points. We ended up not doing the maze because drawing the maze itself and making the objects move according to it was a lot of work, and we thought that letting them just move more freely in the entire world gives the user more freedom and the bouncing doge looks cute :)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 LESSONS LEARNED 
