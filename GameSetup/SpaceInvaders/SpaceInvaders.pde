@@ -83,9 +83,11 @@ void draw() {
     aliens.get(e).move();
   }
 
-/*  for (int ab = 0; ab < aliens.size(); ab++) {
-    hitAlien(aliens.get(ab));
-  }*/
+  if (bill != null) {
+    for (int ab = 0; ab < aliens.size(); ab++) {
+      hitAlien(aliens.get(ab));
+    }
+  }
 }
 
 void keyPressed() {
@@ -100,7 +102,7 @@ void keyPressed() {
       xcoor -= 2;
       user.setFill(color(0, 255, 0));
     }
-    if (bill == null) {
+    if (keyCode == UP && bill == null) {
       bill = new Bullet(3, xcoor+14, 352);
     }
   }
@@ -112,9 +114,8 @@ boolean isMeet(Alien blob) {
  }
  */
 void hitAlien(Alien blob) {
-  if ((bill.getX() > blob.getX() || bill.getX() < blob.getX() + blob.getWid()) &&
-    (bill.getY() < blob.getY() || bill.getY() > blob.getY() + blob.getLen())) {
+  if ((bill.getX() >= blob.getX() && bill.getX() < blob.getX() + blob.getWid()) && (bill.getY() == blob.getY()+blob.getLen())){ //&& bill.getY() > blob.getY() + blob.getLen())) {
     bill.die();
-    blob = null;
+    blob.die();
   }
 }
