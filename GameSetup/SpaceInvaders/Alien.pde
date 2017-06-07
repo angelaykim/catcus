@@ -13,13 +13,13 @@ class Alien {
     speedy = 5;
   }
 
-  Alien(int points, float fastx, float fasty, float xcoor, float ycoor) {
+  Alien(int points, float fastx, float fasty, float xcoor, float ycoor, int r, int g, int b) {
     score = points;
     speedx = fastx;
     speedy = fasty;
     x = xcoor;
     y = ycoor;
-    c = color(255, 255, 255);
+    c = color(r, g, b);
     wid = 30;
     len = 15;
   }
@@ -94,10 +94,12 @@ class Alien {
   }
 
   //it ded
-  void die() {
-    wid = 0;
-    len = 0;
-  }
+   boolean die() {
+   wid = 0;
+   len = 0;
+   return true;
+   }
+
 
   float getX() {
     return x;
@@ -113,6 +115,10 @@ class Alien {
 
   int getLen() {
     return len;
+  }
+  
+  int getScore(){
+     return score; 
   }
 
   void setState(int stet) {

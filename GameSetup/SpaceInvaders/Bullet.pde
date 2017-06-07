@@ -4,14 +4,16 @@ class Bullet {
   color c;
   int speed;
   float x, y;
+  int state = 0;
 
   //constructor
-  Bullet(int fast, float xcoor, float ycoor) {
+  Bullet(int fast, float xcoor, float ycoor, int stat) {
     wid = 4;
     len = 8;
     x = xcoor;
     y = ycoor;
-    c = color(255, 255, 255);
+    state = stat;
+    c = color(#942525);
     speed = fast;
   }
 
@@ -36,5 +38,9 @@ class Bullet {
   
   float getY(){
    return y; 
+  }
+  
+  int getState(){
+     return state; 
   }
 }//end class
