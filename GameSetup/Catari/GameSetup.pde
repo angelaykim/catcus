@@ -52,10 +52,7 @@ class GameSetup {
   Block whichBlock(Ball a, Block[][] b) {
     int row = rowFinder(a);
     int col = colFinder(a);
-    return b[a][b];
-  }//end of method whichBlock
-
-  Block whichBlock(Ball a, Block[][] b) {
+    return b[row][col];
   }//end of method whichBlock
   void makeBlocks(Block[][] a) {
     for (int y = 0; y < a.length - 1; y ++) {
@@ -63,4 +60,5 @@ class GameSetup {
         a[y][x].display();
       }
     }//end of method makeBlocks
-  }//end of class BeginPlay
+  }
+}
